@@ -5,21 +5,21 @@
 class Orama < Formula
   desc "CLI tool for the Orama decentralized network"
   homepage "https://github.com/DeBrosOfficial/network"
-  version "0.102.1-nightly"
+  version "0.102.2-nightly"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.1-nightly/orama_0.102.1-nightly_darwin_amd64.tar.gz"
-      sha256 "f23f338738ff1b192f541f2213cf3d512a7add2b1f82717e34b759290258dca8"
+      url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.2-nightly/orama_0.102.2-nightly_darwin_amd64.tar.gz"
+      sha256 "efb148e92a6aeb226bcb081301e20b2c4c594039e3d49e976af07f778bb238f3"
 
       def install
         bin.install "orama"
       end
     end
     on_arm do
-      url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.1-nightly/orama_0.102.1-nightly_darwin_arm64.tar.gz"
-      sha256 "fdda8cf316fc78cdfb06a4c3711e4b42047426d0d7f1759d6210b142d6570e35"
+      url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.2-nightly/orama_0.102.2-nightly_darwin_arm64.tar.gz"
+      sha256 "d118d066ee70946f4da0b5bdf2e5bfe561e1ab54b3496edf6d4f893b0cbbbcac"
 
       def install
         bin.install "orama"
@@ -30,8 +30,8 @@ class Orama < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.1-nightly/orama_0.102.1-nightly_linux_amd64.tar.gz"
-        sha256 "c8a633a7da35d7b9b02ef93955d1ca812f6e3fc432df322ac72438381c6d5674"
+        url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.2-nightly/orama_0.102.2-nightly_linux_amd64.tar.gz"
+        sha256 "8144e1f9646e1942a1eafdde9a1102e229563fe9a83aa4f20530fe7c9bd557b6"
 
         def install
           bin.install "orama"
@@ -40,8 +40,8 @@ class Orama < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.1-nightly/orama_0.102.1-nightly_linux_arm64.tar.gz"
-        sha256 "a2aab25f9d48e7cece03e8db566967d5ca3cd58289b942eedc673c392452ec8d"
+        url "https://github.com/DeBrosOfficial/network/releases/download/v0.102.2-nightly/orama_0.102.2-nightly_linux_arm64.tar.gz"
+        sha256 "220add1164334348140b28c6c3cf8b8068c3b59bfc4ded8693332a5f5144bcbe"
 
         def install
           bin.install "orama"
