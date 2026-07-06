@@ -5,34 +5,19 @@
 class Rootwallet < Formula
   desc "RootWallet CLI — terminal wallet for EVM and Solana"
   homepage "https://rootwallet.io"
-  version "0.107.4"
+  url "https://registry.npmjs.org/@debros/root-cli/-/root-cli-0.107.5.tgz"
+  sha256 "059f0cdefec776bda78a7ff11f8032f49ad969448479c1cf074af75b67595d52"
+  version "0.107.5"
   license "MIT"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://rootwallet.io/downloads/v0.107.4/rootwallet_0.107.4_darwin-arm64.tar.gz"
-      sha256 "71c4d86e76d4b4c119e6270065b0f3a2459cbe5fa1f0182b3da0670dc65407a6"
-    else
-      url "https://rootwallet.io/downloads/v0.107.4/rootwallet_0.107.4_darwin-amd64.tar.gz"
-      sha256 "413262e47eade71a9a2e2c275a71169661f635ec855256b23cbe7ee9f2c2aa19"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm?
-      url "https://rootwallet.io/downloads/v0.107.4/rootwallet_0.107.4_linux-arm64.tar.gz"
-      sha256 "4569eed05ef3dfc21c7719584d0bd4df69b2e555baf0b816205fbe61ad26f65d"
-    else
-      url "https://rootwallet.io/downloads/v0.107.4/rootwallet_0.107.4_linux-amd64.tar.gz"
-      sha256 "4d072dc7f7fd926039aefc4505308c9e7cdf9c7b2b2869dd902ccead5ecef9d8"
-    end
-  end
+  depends_on "node"
 
   def install
-    bin.install "rw"
+    system "npm", "install", *std_npm_args
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
-    system "#{bin}/rw", "--version"
+    assert_match version.to_s, shell_output("#{bin}/rw --version")
   end
 end
